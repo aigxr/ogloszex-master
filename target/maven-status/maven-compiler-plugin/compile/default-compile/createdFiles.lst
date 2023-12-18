@@ -1,0 +1,12 @@
+pl\javastart\restoffers\category\CategoryDto.class
+pl\javastart\restoffers\category\CategoryRestController.class
+pl\javastart\restoffers\category\CategoryRepository.class
+pl\javastart\restoffers\offer\OfferDto.class
+pl\javastart\restoffers\offer\Offer.class
+pl\javastart\restoffers\offer\OfferService.class
+pl\javastart\restoffers\offer\NoCategoryException.class
+pl\javastart\restoffers\category\CategoryService.class
+pl\javastart\restoffers\offer\OfferRepository.class
+pl\javastart\restoffers\offer\OfferRestController.class
+pl\javastart\restoffers\category\Category.class
+pl\javastart\restoffers\RestOffersApplication.class
