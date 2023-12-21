@@ -9,4 +9,4 @@ spring:
     init:
       mode: never
   profiles:
-    default: dev
+    default: prod
