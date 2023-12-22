@@ -1,9 +1,12 @@
 spring:
   datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://mysql:3306/ogloszex
     username: root
     password: tajnehaslo
-    url: jdbc:mysql://mysql:3306/ogloszex
-    driver-class-name: com.mysql.cj.jdbc.Driver
 #    url: jdbc:mysql://localhost:3306/ogloszex
+  jpa:
+    hibernate:
+      ddl-auto: validate
   liquibase:
     contexts: prod
