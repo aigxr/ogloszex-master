@@ -1,7 +1,7 @@
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://80.211.249.62:3306/ogloszex
+    url: jdbc:mysql://mysql:3306/ogloszex
     username: root
     password: tajnehaslo
   liquibase:
