@@ -1,8 +1,32 @@
+version: '3'
+
 services:
   mysql:
-    image: mysql
-    ports:
-      - "3306:3306"
+    image: mysql:8.0.34
     environment:
       MYSQL_ROOT_PASSWORD: tajnehaslo
-      MYSQL_DATABASE: ogloszex
+    ports:
+      - "3306:3306"
+    restart: unless-stopped
+    volumes:
+      - /var/lib/mysql:/var/lib/mysql
+    networks:
+      - ogloszex-network
+
+  ogloszex-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      SPRING_PROFILES_ACTIVE: prod
+    ports:
+      - "8080:8080"
+    restart: unless-stopped
+    networks:
+      - ogloszex-network
+    depends_on:
+      - mysql
+
+networks:
+  ogloszex-network:
+    driver: bridge
