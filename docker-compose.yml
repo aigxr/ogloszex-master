@@ -1,32 +1,26 @@
 version: '3'
-
 services:
-  mysql:
-    image: mysql:8.0.34
+  db:
+    image: mysql:8.0.35
+    container_name: mysql
     environment:
+      MYSQL_DATABASE: ogloszex
+      MYSQL_USER: root
+      MYSQL_PASSWORD: tajnehaslo
       MYSQL_ROOT_PASSWORD: tajnehaslo
     ports:
       - "3306:3306"
-    restart: unless-stopped
     volumes:
-      - /var/lib/mysql:/var/lib/mysql
-    networks:
-      - ogloszex-network
+      - db:/var/lib/mysql/data
 
-  ogloszex-app:
+  app:
     build:
       context: .
       dockerfile: Dockerfile
-    environment:
-      SPRING_PROFILES_ACTIVE: prod
+    container_name: myapp
     ports:
       - "8080:8080"
-    restart: unless-stopped
-    networks:
-      - ogloszex-network
-    depends_on:
-      - mysql
-
-networks:
-  ogloszex-network:
-    driver: bridge
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/ogloszex
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: tajnehaslo
