@@ -6,3 +6,6 @@ spring:
     password: tajnehaslo
   liquibase:
     contexts: prod
+  h2:
+    console:
+      enabled: true
