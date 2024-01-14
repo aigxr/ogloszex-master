@@ -1,10 +1,10 @@
 INSERT INTO
-    category(id, name, description)
+    category(name, description)
 VALUES
-(1, 'Kategoria usunięta', ''),
-(2, 'Elektronika', 'Bardzo fajne przedmioty'),
-(3, 'AGD', 'Sprzęty gospodarstwa domowego'),
-(4, 'Moto', 'Samochody, skutery i ciężarówki');
+    ('Kategoria usunięta', ''),
+    ('Elektronika', 'Bardzo fajne przedmioty'),
+    ('AGD', 'Sprzęty gospodarstwa domowego'),
+    ('Moto', 'Samochody, skutery i ciężarówki');
 
 INSERT INTO
     offer(title, description, price, category_id, img_url)
